@@ -6,11 +6,42 @@
 }
 
 :root {
-    --primary:#ff651c;
     --back: #eeeeee;
     --back-2: #f9f9f9;
     --white:#fff;
     --text: #555;
+}
+
+:root.orange {
+    --primary:#ff651c;
+}
+
+:root.purple {
+    --primary: #8315e7;
+}
+
+:root.red {
+    --primary: red;
+}
+
+:root.violet {
+    --primary: #ee82ee;
+}
+
+:root.blue {
+    --primary: blue;
+}
+
+:root.gold {
+    --primary: gold;
+}
+
+:root.magenta {
+    --primary: magenta;
+}
+
+:root.green {
+    --primary: green;
 }
 
 .root {
@@ -21,6 +52,22 @@
     background-color: var(--back);
 }
 
+.back {
+    width: 800px;
+    height: 310%;
+    background-color: var(--primary);
+    transform: rotate(32deg) translateX(-119%);
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgb(0 0 0 / 40%);
+}
+
+@media (max-width:567px) {
+    .back {
+        transform: rotate(25deg) translateX(-126%);
+    }
+}
+
+/* nav bar */
 .nav-bar {
     position: fixed;
     right: 0;
@@ -34,6 +81,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .nav-icon {
@@ -113,3 +161,86 @@
         transform: translateY(-35px);
     }
 }
+
+/* setting */
+.page-setting {
+    position: fixed;
+    top: 150px;
+    background-color: rgba(0,0,0,.75);
+    color: var(--back-2);
+    min-width: 170px;
+    padding: 20px 10px;
+    font-size: 17px;
+    border-bottom-right-radius: 5px;
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: 0.3s ease;
+}
+
+.page-setting.active {
+    transform: translateX(0);
+}
+
+.set-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,.75);
+    cursor: pointer;
+    font-size: 19px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.color-set > div:first-child {
+    padding-bottom: 3px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid;
+}
+
+.colors {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.color {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* tabs */
+.tabs-container {
+    position: fixed;
+    top: 10%;
+    bottom: 10%;
+    right: 100px;
+    left: 10%;
+    background-color: var(--white);
+    box-shadow: 0 0 20px rgb(0 0 0 / 8%);
+    border-radius: 10px;
+}
+
+@media (max-width:567px) {
+    .tabs-container {
+        top: 20px;
+        right: 20px;
+        left: 20px;
+        bottom: 110px;
+    }
+}
+
+@media (min-width:1000px) {
+    .tabs-container {
+        right: 10%;
+    }
+}
+
