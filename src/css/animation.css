@@ -1,4 +1,4 @@
-@keyframes Rotation {
+@keyframes ani-1 {
     0% {
         transform: rotate(0deg);
     } 50% {
@@ -9,5 +9,33 @@
 }
 
 .ani-1 {
-    animation: Rotation 2s linear 0s infinite normal;
+    animation: ani-1 2s linear 0s infinite normal;
+}
+
+@keyframes ani-2 {
+    0% {
+        left: 0;
+    } 100% {
+        left: 90%;
+    }
+}
+
+.ani-2::after {
+    animation: ani-2 5s linear 0s infinite alternate;
+}
+
+@keyframes ani-3 {
+    0% {
+        transform: translateY(0);
+    } 40% {
+        transform: translateY(-65px);
+    } 80% {
+        transform: translateY(-130px);
+    } 100% {
+        transform: translateY(0);
+    }
+}
+
+.ani-3-cont {
+    animation: ani-3 5s ease-in-out 0.5s infinite normal;
 }
