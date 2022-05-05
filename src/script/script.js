@@ -25,12 +25,32 @@ lightBtn.forEach(i => {
 
 // nav bar
 const navIcon = document.querySelectorAll(".nav-icon");
-navIcon.forEach(i => {
+const article = document.querySelectorAll(".tabs-container > article");
+
+navIcon.forEach((i, index) => {
     i.addEventListener("click", () => {
         navIcon.forEach(e => e.classList.remove("active"));
         i.classList.add("active");
+        showArticle(index);
     })
 })
+
+function showArticle(num) {
+    article.forEach(i => i.classList.add("disable"));
+    article[num].classList.remove("disable");
+}
+
+const aboutBtn = document.querySelector("a.about-btn");
+const contactBtn = document.querySelector("a.contact-btn");
+
+function buttonArticle(num) {
+    navIcon.forEach(i => i.classList.remove("active"));
+    navIcon[num].classList.add("active");
+    showArticle(num);
+}
+
+aboutBtn.addEventListener("click", () => buttonArticle(1));
+contactBtn.addEventListener("click", () => buttonArticle(3));
 
 // setting bar
 const setIcon = document.querySelector(".set-icon");
