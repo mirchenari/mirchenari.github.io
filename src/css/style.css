@@ -597,6 +597,10 @@ a:hover {
     .skills {
         grid-template-columns: 1fr;
     }
+
+    .skill {
+        margin: 20px 0;
+    }
 }
 
 .skill {
