@@ -723,3 +723,75 @@ a:hover {
 .di::after {
     width: 60%;
 }
+
+.service-cont {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 35px 0;
+}
+
+@media (max-width:990px) {
+    .service-cont {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service {
+        margin: 0 0 25px 25px;
+    }
+
+    .service:nth-child(odd) {
+        margin-left: 0;
+    }
+}
+
+@media (max-width:567px) {
+    .service-cont {
+        grid-template-columns: 1fr;
+    }
+
+    .service {
+        margin-left: 0 !important;
+    }
+}
+
+.service {
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    border-radius: 20px;
+    margin-left: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+:root[data-color='dark'] .service {
+    box-shadow: 0 0 10px rgb(0 0 0 / 85%);
+}
+
+.service:hover {
+    background-color: var(--back);
+}
+
+.service > .icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+:root[data-color='dark'] .service > .icon {
+    color: var(--white);
+}
+
+.service > h4 {
+    color: var(--primary);
+}
+
+:root[data-color='dark'] .service > h4 {
+    color: var(--primary);
+}
+
+.service:first-child {
+    margin-left: 0;
+}
